@@ -4,6 +4,10 @@ if exists('g:loaded_replace') || &compatible
 endif
 let g:loaded_replace = 1
 
+if !exists('g:substitution_activator')
+    let g:substitution_activator = '<Leader>s'
+endif
+
 function! s:substitute()
 	call inputsave()
 	let l:oldword = input('Word to replace: ')
@@ -24,6 +28,5 @@ function! s:substitute()
 	" exec "%s/\\<" . l:oldword . "\\>/" . l:newword . "/gc"
 endfunction
 
-
-nnoremap <silent> <Leader>s :call <SID>substitute()<CR>
+execute "nnoremap <silent> " . g:substitution_activator . " :call <SID>substitute() <CR>"
 
