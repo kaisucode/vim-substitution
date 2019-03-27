@@ -18,10 +18,22 @@ Plug 'kaisucode/vim-substitution'
 to your `.vimrc`.
 
 ## Customization
+
+### Mappings
 The default mapping is \<Leader\>s, but you can change it in your vim config
 ```vim
 let g:substitution_activator = '<Leader>a'
 ```
+
+### Search options
+Set these to 1 in your vim config to activate
+```vim
+let g:substitution_fullwordmatch = 1
+let g:substitution_global = 1
+let g:substitution_confirmation = 1
+```
+
+
 
 
 ## Need to work on
